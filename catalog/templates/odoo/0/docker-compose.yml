@@ -1,5 +1,5 @@
 odoo:
-  image: odoo
+  image: dstadel/odoo10.0
   ports:
     - ${client_port}:8069
   links:
