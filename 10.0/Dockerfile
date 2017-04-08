@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM debian:jessie
 MAINTAINER Odoo S.A. & Didier <info@odoo.com>
 
 # Install some deps, lessc and less-plugin-clean-css, and wkhtmltopdf
