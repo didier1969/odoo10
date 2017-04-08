@@ -10,6 +10,12 @@
       required: true
       default: "8020"
       type: "int"
+    - variable: client_path
+      description: "Root path of odoo files"
+      label: "Client Path"
+      required: true
+      default: "/home/dstadel/odoo10-dev0x"
+      type: "string"
     - variable: db_password
       description: "Password for database"
       label: "Password (default: odoo)"
