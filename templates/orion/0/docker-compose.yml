@@ -1,4 +1,4 @@
-odoo:
+orion:
   image: dstadel/orion
   ports:
     - ${client_port}:8080
