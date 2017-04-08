@@ -7,6 +7,7 @@ RUN set -x; \
         && apt-get install -y --no-install-recommends \
             ca-certificates \
             curl \
+            nano \
             node-less \
             python-gevent \
             python-pip \
