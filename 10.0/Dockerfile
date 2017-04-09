@@ -23,7 +23,6 @@ RUN set -x; \
             python-pybabel python-pychart python-pydot python-pyparsing python-pypdf python-reportlab python-requests \
             python-simplejson python-tz python-unicodecsv python-unittest2 python-vatnumber python-vobject \
             python-werkzeug python-xlwt python-yaml node-clean-css xfonts-75dpi \
-            openssh-server \
         && curl -o wkhtmltox.deb -SL http://nightly.odoo.com/extra/wkhtmltox-0.12.1.2_linux-jessie-amd64.deb \
         && echo '40e8b906de658a2221b15e4e8cd82565a47d7ee8 wkhtmltox.deb' | sha1sum -c - \
         && dpkg --force-depends -i wkhtmltox.deb \
