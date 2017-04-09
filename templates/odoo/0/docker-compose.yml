@@ -7,7 +7,7 @@ odoo:
   volumes:
     - odoo_webdata:/var/lib/odoo
     - odoo_config:/etc/odoo
-    - odoo_addons:/mnt/extra-addons
+    - /home/dstadel/che_data/instance/data/workspaces/python27/extra-addons:/mnt/extra-addons
     
 db:
   image: postgres
