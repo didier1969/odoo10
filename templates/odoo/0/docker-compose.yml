@@ -1,16 +1,14 @@
 odoo:
   image: dstadel/odoo10.0
-  #image: odoo
   ports:
     - ${client_port}:8069
-    - 222:22
   links:
     - db
   volumes:
-    - odoo_webdata:/var/lib/odoo
-    - odoo_config:/etc/odoo
-    - odoo_addons:/mnt/extra-addons
-
+    - ${client_path}odoo_webdata:/var/lib/odoo
+    - ${client_path}odoo_config:/etc/odoo
+    - ${client_path}odoo_addons:/mnt/extra-addons
+    
 db:
   image: postgres
   environment:
@@ -18,5 +16,4 @@ db:
     - POSTGRES_PASSWORD=${db_password}
     - PGDATA=/var/lib/postgresql/data/pgdata
   volumes:
-    - odoo_db_data:/var/lib/postgresql/data/pgdata
-
+    - ${client_path}odoo_db_data:/var/lib/postgresql/data/pgdata
