@@ -8,6 +8,8 @@ odoo:
     - ${client_path}odoo_webdata:/var/lib/odoo
     - ${client_path}odoo_config:/etc/odoo
     - ${client_path}odoo_addons:/mnt/extra-addons
+  environment:
+    - LOCAL_USER_ID=`id -u $USER`
     
 db:
   image: postgres
@@ -15,5 +17,6 @@ db:
     - POSTGRES_USER=odoo
     - POSTGRES_PASSWORD=${db_password}
     - PGDATA=/var/lib/postgresql/data/pgdata
+    - LOCAL_USER_ID=`id -u $USER`
   volumes:
     - ${client_path}odoo_db_data:/var/lib/postgresql/data/pgdata
