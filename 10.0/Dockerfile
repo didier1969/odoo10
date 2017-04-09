@@ -14,7 +14,10 @@ RUN set -x; \
             python-renderpm \
             python-support \
             python-watchdog \
-            python-cups python-dateutil python-decorator python-docutils python-feedparser \
+            libcups2-dev \
+            cups \
+            python-cups \
+            python-dateutil python-decorator python-docutils python-feedparser \
             python-gdata python-geoip python-imaging python-jinja2 python-ldap python-libxslt1 \
             python-lxml python-mako python-mock python-openid python-passlib python-psutil python-psycopg2 \
             python-pybabel python-pychart python-pydot python-pyparsing python-pypdf python-reportlab python-requests \
@@ -27,7 +30,8 @@ RUN set -x; \
         && apt-get -y install -f --no-install-recommends \
         && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false npm \
         && rm -rf /var/lib/apt/lists/* wkhtmltox.deb \
-        && pip install psycogreen==1.0
+        && pip install psycogreen==1.0 \
+        && pip install pycups
 
 # Install Odoo
 ENV ODOO_VERSION 10.0
